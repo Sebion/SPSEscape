@@ -6,10 +6,12 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private Player player;
+    private BoxCollider2D groundChecker;
 
     private void Start()
     {
         player = gameObject.GetComponentInParent<Player>();
+        groundChecker = gameObject.GetComponent<BoxCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -24,7 +26,8 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        player.grounded = false; 
+        player.grounded = false;
     }
-    
+
+
 }
