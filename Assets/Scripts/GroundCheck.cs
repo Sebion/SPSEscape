@@ -14,17 +14,25 @@ public class GroundCheck : MonoBehaviour
         groundChecker = gameObject.GetComponent<BoxCollider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        player.grounded = true;
+        if (hitInfo.tag!= "Unjumpable")
+        {
+            
+            player.grounded = true;
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D hitInfo)
     {
-        player.grounded = true;
+        if (hitInfo.tag != "Unjumpable")
+        {
+            player.grounded = true;
+        }
+        
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D hitInfo)
     {
         player.grounded = false;
     }

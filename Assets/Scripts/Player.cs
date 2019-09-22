@@ -9,9 +9,10 @@ public class Player : MonoBehaviour
     public float movementSpeed;
     public float crouchingSpeed;
     private float actualSpeed;
+    private bool facingRight = true;
 
     public float jumpPower;
-    public float fallMultiplier = 2.5f;
+    public float fallMultiplier = 4f;
     public float lowJumpMultiplier = 4f;
 
     public bool grounded;
@@ -44,27 +45,21 @@ public class Player : MonoBehaviour
 
         //rotating character
 
-        if (Input.GetAxis("Horizontal") >= 0.01)
+        if (Input.GetAxis("Horizontal") >= 0.01 && !facingRight)
         {
-            if (transform.localScale.x < 0)
-            {
-                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-            }
+            flipCharacter();
         }
 
-        else if (Input.GetAxis("Horizontal") <= -0.01)
+        else if (Input.GetAxis("Horizontal") <= -0.01 && facingRight)
         {
-            if (transform.localScale.x > 0)
-            {
-                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-            }
+            flipCharacter();
         }
     }
 
     private void FixedUpdate()
     {
         //horizontal movement
-    
+
         rb2d.velocity = new Vector2(actualSpeed * Input.GetAxis("Horizontal"), rb2d.velocity.y);
 
         //jumping
@@ -81,7 +76,6 @@ public class Player : MonoBehaviour
             {
                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-            
         }
 
         else if (rb2d.velocity.y > 0 && !Input.GetKey(KeyCode.W))
@@ -108,5 +102,11 @@ public class Player : MonoBehaviour
 
             actualSpeed = movementSpeed;
         }
+    }
+
+    private void flipCharacter()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 }
