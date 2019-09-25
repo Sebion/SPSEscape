@@ -16,7 +16,7 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag!= "Unjumpable")
+        if (!hitInfo.CompareTag("Unjumpable"))
         {
             
             player.grounded = true;
@@ -25,7 +25,7 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D hitInfo)
     {
-        if (hitInfo.tag != "Unjumpable")
+        if (!hitInfo.CompareTag("Unjumpable"))
         {
             player.grounded = true;
         }

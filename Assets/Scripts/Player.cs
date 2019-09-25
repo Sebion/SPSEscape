@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     private Animator anim;
+    public Joystick joystick;
 
 
     // Start is called before the first frame update
@@ -45,12 +46,12 @@ public class Player : MonoBehaviour
 
         //rotating character
 
-        if (Input.GetAxis("Horizontal") >= 0.01 && !facingRight)
+        if (joystick.Horizontal >= 0.01 && !facingRight)
         {
             flipCharacter();
         }
 
-        else if (Input.GetAxis("Horizontal") <= -0.01 && facingRight)
+        else if (joystick.Horizontal <= -0.01 && facingRight)
         {
             flipCharacter();
         }
@@ -59,11 +60,17 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         //horizontal movement
-
-        rb2d.velocity = new Vector2(actualSpeed * Input.GetAxis("Horizontal"), rb2d.velocity.y);
+        if (joystick.Horizontal>0.3f)
+        {
+            rb2d.velocity = new Vector2(actualSpeed,rb2d.velocity.y);
+        }else if (joystick.Horizontal< -0.3f)
+        {
+            rb2d.velocity = new Vector2(-actualSpeed,rb2d.velocity.y);
+        }else rb2d.velocity = new Vector2(0,rb2d.velocity.y);
+        
 
         //jumping
-        if (grounded && Input.GetKey(KeyCode.W))
+        if (grounded && joystick.Vertical > 0.5f)
         {
             rb2d.velocity = (Vector2.up * jumpPower);
         }
@@ -72,13 +79,13 @@ public class Player : MonoBehaviour
         if (rb2d.velocity.y < 0)
         {
             falling = true;
-            if (falling && Input.GetKey(KeyCode.S))
+            if (falling && joystick.Vertical < -0.5f)
             {
                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
         }
 
-        else if (rb2d.velocity.y > 0 && !Input.GetKey(KeyCode.W))
+        else if (rb2d.velocity.y > 0 && joystick.Vertical <0.5f)
         {
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
@@ -86,7 +93,7 @@ public class Player : MonoBehaviour
 
 
         //crouching
-        if (grounded && Input.GetKey(KeyCode.S))
+        if (grounded && joystick.Vertical < -0.5f )
         {
             crouching = true;
             bc2d.offset = new Vector2(0.015f, -0.082f);
