@@ -331,6 +331,9 @@
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
     </Reference>
@@ -690,6 +693,18 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{A6C5C480-DDCF-DDF6-AC39-C454B7950AAB}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{6BCCA693-C166-0694-0CFF-91025708BAAE}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{F561D520-F1BB-8932-2C13-1BF0EDB23DC8}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{EA65BA14-523C-2350-202E-171028C6D488}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

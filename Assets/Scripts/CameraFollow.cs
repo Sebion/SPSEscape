@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x, ref velocity, smoothTime);
+        float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x , ref velocity, smoothTime);
         transform.position = new Vector3(posX,0,transform.position.z);   
     }
 }
