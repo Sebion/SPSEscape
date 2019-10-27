@@ -243,6 +243,7 @@
           <e p="EagleAI.cs" t="Include" />
           <e p="GroundCheck.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
+          <e p="PauseMenu.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
