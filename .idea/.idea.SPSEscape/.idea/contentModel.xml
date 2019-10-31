@@ -247,6 +247,10 @@
           <e p="Player.cs" t="Include" />
           <e p="Weapon.cs" t="Include" />
         </e>
+        <e p="ScriptsEndless" t="Include">
+          <e p="GroundCheckEndless.cs" t="Include" />
+          <e p="PlayerEndless.cs" t="Include" />
+        </e>
         <e p="Standard Assets" t="Include">
           <e p="CrossPlatformInput" t="Include">
             <e p="CrossPlatformInputGuidelines.txt" t="Include" />

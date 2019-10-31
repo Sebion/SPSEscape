@@ -6,12 +6,12 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private Player player;
-    private BoxCollider2D groundChecker;
+    
 
     private void Start()
     {
         player = gameObject.GetComponentInParent<Player>();
-        groundChecker = gameObject.GetComponent<BoxCollider2D>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)

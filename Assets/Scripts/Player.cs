@@ -96,16 +96,16 @@ public class Player : MonoBehaviour
         if (grounded && joystick.Vertical < -0.5f )
         {
             crouching = true;
-            bc2d.offset = new Vector2(0.015f, -0.082f);
-            bc2d.size = new Vector2(0.179f, 0.153f);
+            bc2d.offset = new Vector2(0.09703f, -0.5678f);
+            bc2d.size = new Vector2(0.9958f, 0.8754f);
 
             actualSpeed = crouchingSpeed;
         }
         else
         {
             crouching = false;
-            bc2d.offset = new Vector2(-0.004f, -0.054f);
-            bc2d.size = new Vector2(0.160f, 0.209f);
+            bc2d.offset = new Vector2(-0.03028131f, -0.3534986f);
+            bc2d.size = new Vector2(0.8758283f, 1.294194f);
 
             actualSpeed = movementSpeed;
         }
