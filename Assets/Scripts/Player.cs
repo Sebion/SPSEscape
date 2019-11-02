@@ -71,45 +71,45 @@ public class Player : MonoBehaviour
 
         //jumping
         if (grounded && joystick.Vertical > 0.5f)
-        {
-            rb2d.velocity = (Vector2.up * jumpPower);
-        }
-
-        //falling
-        if (rb2d.velocity.y < 0)
-        {
-            falling = true;
-            if (falling && joystick.Vertical < -0.5f)
-            {
-                rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-            }
-        }
-
-        else if (rb2d.velocity.y > 0 && joystick.Vertical <0.5f)
-        {
-            rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-        }
-        else falling = false;
-
-
-        //crouching
-        if (grounded && joystick.Vertical < -0.5f )
-        {
-            crouching = true;
-            bc2d.offset = new Vector2(0.09703f, -0.5678f);
-            bc2d.size = new Vector2(0.9958f, 0.8754f);
-
-            actualSpeed = crouchingSpeed;
-        }
-        else
-        {
-            crouching = false;
-            bc2d.offset = new Vector2(-0.03028131f, -0.3534986f);
-            bc2d.size = new Vector2(0.8758283f, 1.294194f);
-
-            actualSpeed = movementSpeed;
-        }
-    }
+             {
+                 rb2d.velocity = (Vector2.up * jumpPower);
+             }
+     
+             //falling
+             if (rb2d.velocity.y < 0)
+             {
+                 falling = true;
+                 if (falling && joystick.Vertical < -0.5f)
+                 {
+                     rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+                 }
+             }
+     
+             else if (rb2d.velocity.y > 0 && joystick.Vertical <0.5f)
+             {
+                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+             }
+             else falling = false;
+     
+     
+             //crouching
+             if (grounded && joystick.Vertical < -0.5f )
+             {
+                 crouching = true;
+                 bc2d.offset = new Vector2(0.09703f, -0.5678f);
+                 bc2d.size = new Vector2(0.9958f, 0.8754f);
+     
+                 actualSpeed = crouchingSpeed;
+             }
+             else
+             {
+                 crouching = false;
+                 bc2d.offset = new Vector2(-0.03028131f, -0.3534986f);
+                 bc2d.size = new Vector2(0.8758283f, 1.294194f);
+     
+                 actualSpeed = movementSpeed;
+             }
+         }
 
     private void flipCharacter()
     {

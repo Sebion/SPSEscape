@@ -248,6 +248,7 @@
           <e p="Weapon.cs" t="Include" />
         </e>
         <e p="ScriptsEndless" t="Include">
+          <e p="CameraEndless.cs" t="Include" />
           <e p="GroundCheckEndless.cs" t="Include" />
           <e p="PlayerEndless.cs" t="Include" />
         </e>
