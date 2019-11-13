@@ -1,19 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ScriptsEndless
 {
     public class CameraEndless : MonoBehaviour
     {
-        public Transform player;
-        public float smoothTime = 0.2f;
-        private float velocity;
-   
-   
-        // Update is called once per frame
-        void FixedUpdate()
+        public PlayerEndless player;
+
+        private float distanceToMove;
+        private Vector3 lastPlayerPosition;
+
+
+        private void Start()
         {
-            float posX = Mathf.SmoothDamp(transform.position.x, player.transform.position.x , ref velocity, smoothTime);
-            transform.position = new Vector3(posX,0,transform.position.z);   
+            lastPlayerPosition = player.transform.position;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            distanceToMove = player.transform.position.x - lastPlayerPosition.x;
+
+            transform.position = new Vector3(transform.position.x + distanceToMove, transform.position.y,
+                transform.position.z);
+
+
+            lastPlayerPosition = player.transform.position;
         }
     }
 }

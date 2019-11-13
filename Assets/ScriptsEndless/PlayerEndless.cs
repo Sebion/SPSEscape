@@ -54,7 +54,7 @@ public class PlayerEndless : MonoBehaviour
     private void FixedUpdate()
     {
         //horizontal movement
-        // rb2d.velocity = new Vector2(movementSpeed,rb2d.velocity.y);
+         rb2d.velocity = new Vector2(movementSpeed,rb2d.velocity.y);
         //jumping
         if (grounded && CrossPlatformInputManager.GetButton("Jump"))
         {
