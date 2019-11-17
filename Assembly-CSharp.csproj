@@ -76,6 +76,7 @@
     <Compile Include="Assets\ScriptsEndless\DestroyingObstacles.cs" />
     <Compile Include="Assets\ScriptsEndless\GeneratingObstacles.cs" />
     <Compile Include="Assets\ScriptsEndless\GroundCheckEndless.cs" />
+    <Compile Include="Assets\ScriptsEndless\ObjectPooler.cs" />
     <Compile Include="Assets\ScriptsEndless\PlayerEndless.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

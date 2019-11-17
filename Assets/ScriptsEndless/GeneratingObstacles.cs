@@ -6,10 +6,13 @@ public class GeneratingObstacles : MonoBehaviour
 {
     public GameObject obstacle;
     public Transform generationPoint;
-    public float gapWidth;
+    public ObjectPooler objectPooler;
+    private float gapWidth;
+    public float gapWidthMax;
+    public float gapWidthMin;
     public int positionZ;
     private float obstacleWidth;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +20,6 @@ public class GeneratingObstacles : MonoBehaviour
         {
             obstacleWidth = obstacle.GetComponent<BoxCollider2D>().size.x;
         }
-        
     }
 
     // Update is called once per frame
@@ -25,8 +27,14 @@ public class GeneratingObstacles : MonoBehaviour
     {
         if (transform.position.x < generationPoint.transform.position.x)
         {
-            transform.position= new Vector3(transform.position.x + gapWidth+ obstacleWidth,transform.position.y, positionZ);
-            Instantiate(obstacle, transform.position, transform.rotation);
+            gapWidth = Random.Range(gapWidthMin, gapWidthMax);
+            transform.position = new Vector3(transform.position.x + gapWidth + obstacleWidth, transform.position.y,
+                positionZ);
+            // Instantiate(obstacle, transform.position, transform.rotation);
+            GameObject newObstacle = objectPooler.getPooledObject();
+            newObstacle.transform.position = transform.position;
+            newObstacle.transform.rotation = transform.rotation;
+            newObstacle.SetActive(true);
         }
     }
 }

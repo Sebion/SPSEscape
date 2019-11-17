@@ -252,6 +252,7 @@
           <e p="DestroyingObstacles.cs" t="Include" />
           <e p="GeneratingObstacles.cs" t="Include" />
           <e p="GroundCheckEndless.cs" t="Include" />
+          <e p="ObjectPooler.cs" t="Include" />
           <e p="PlayerEndless.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
