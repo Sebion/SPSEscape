@@ -10,6 +10,9 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerEndless : MonoBehaviour
 {
     public float movementSpeed;
+    public float movementSpeedMultiplier;
+    public float speedIncreaseMilestone;
+    private float speedMilestoneCount;
 
 
     public float jumpPower;
@@ -45,16 +48,21 @@ public class PlayerEndless : MonoBehaviour
         anim.SetFloat("Speed", Math.Abs(rb2d.velocity.x));
         anim.SetBool("Crouching", crouching);
         anim.SetBool("Falling", falling);
-
-
-       
     }
 
 
     private void FixedUpdate()
     {
         //horizontal movement
-         rb2d.velocity = new Vector2(movementSpeed,rb2d.velocity.y);
+
+        if (transform.position.x > speedMilestoneCount && movementSpeed <=16)
+        {
+            speedMilestoneCount += speedIncreaseMilestone;
+            speedIncreaseMilestone *= movementSpeedMultiplier;
+            movementSpeed *= movementSpeedMultiplier;
+        }
+
+        rb2d.velocity = new Vector2(movementSpeed, rb2d.velocity.y);
         //jumping
         if (grounded && CrossPlatformInputManager.GetButton("Jump"))
         {
