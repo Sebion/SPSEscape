@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\ScriptsEndless\CameraEndless.cs" />
     <Compile Include="Assets\ScriptsEndless\DestroyingObstacles.cs" />
+    <Compile Include="Assets\ScriptsEndless\GameManager.cs" />
     <Compile Include="Assets\ScriptsEndless\GeneratingObstacles.cs" />
     <Compile Include="Assets\ScriptsEndless\GroundCheckEndless.cs" />
     <Compile Include="Assets\ScriptsEndless\ObjectPooler.cs" />

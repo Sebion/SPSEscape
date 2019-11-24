@@ -250,6 +250,7 @@
         <e p="ScriptsEndless" t="Include">
           <e p="CameraEndless.cs" t="Include" />
           <e p="DestroyingObstacles.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
           <e p="GeneratingObstacles.cs" t="Include" />
           <e p="GroundCheckEndless.cs" t="Include" />
           <e p="ObjectPooler.cs" t="Include" />

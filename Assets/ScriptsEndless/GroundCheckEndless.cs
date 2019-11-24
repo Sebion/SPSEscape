@@ -6,19 +6,17 @@ using UnityEngine;
 public class GroundCheckEndless : MonoBehaviour
 {
     private PlayerEndless player;
-   
+
 
     private void Start()
     {
         player = gameObject.GetComponentInParent<PlayerEndless>();
-        
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (!hitInfo.CompareTag("Unjumpable"))
         {
-            
             player.grounded = true;
         }
     }
@@ -29,13 +27,10 @@ public class GroundCheckEndless : MonoBehaviour
         {
             player.grounded = true;
         }
-        
     }
 
     private void OnTriggerExit2D(Collider2D hitInfo)
     {
         player.grounded = false;
     }
-
-
 }

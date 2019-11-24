@@ -7,6 +7,7 @@ using UnityEngine.Analytics;
 using UnityEngine.Serialization;
 using UnityStandardAssets.CrossPlatformInput;
 
+
 public class PlayerEndless : MonoBehaviour
 {
     public float movementSpeed;
@@ -18,7 +19,7 @@ public class PlayerEndless : MonoBehaviour
     public float jumpPower;
     public float fallMultiplier = 4f;
     public float lowJumpMultiplier = 4f;
-    public float maxTime;
+
 
     public bool grounded;
     public bool crouching;
@@ -27,8 +28,8 @@ public class PlayerEndless : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     private Animator anim;
-    private float screenWidth;
-    private Touch touch;
+    public GameManager gameManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,6 @@ public class PlayerEndless : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         bc2d = gameObject.GetComponent<BoxCollider2D>();
         movementSpeed = gameObject.GetComponent<PlayerEndless>().movementSpeed;
-        screenWidth = Screen.width;
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class PlayerEndless : MonoBehaviour
     {
         //horizontal movement
 
-        if (transform.position.x > speedMilestoneCount && movementSpeed <=16)
+        if (transform.position.x > speedMilestoneCount && movementSpeed <= 16)
         {
             speedMilestoneCount += speedIncreaseMilestone;
             speedIncreaseMilestone *= movementSpeedMultiplier;
@@ -99,6 +99,15 @@ public class PlayerEndless : MonoBehaviour
             crouching = false;
             bc2d.offset = new Vector2(-0.03028131f, -0.3534986f);
             bc2d.size = new Vector2(0.8758283f, 1.294194f);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag(("KillBox")))
+        {
+            gameManager.RestartGame();
+           
         }
     }
 }
