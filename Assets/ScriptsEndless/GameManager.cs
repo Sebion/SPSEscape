@@ -1,41 +1,56 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Transform platformGenerator;
-    private Vector3 platformStartPositon;
+    //score
+    public TextMeshProUGUI scoreText;
+    public GameObject pauseButton;
+    public GameObject deathMenu;
+    public TextMeshProUGUI highScoreText;
+    private float score;
+    private float highScore = 0;
+    public float scorePerSecond;
 
-    public PlayerEndless thePlayer;
-
-    private Vector3 thePlayerStartPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        platformStartPositon = platformGenerator.position;
-        thePlayerStartPosition = thePlayer.transform.position;
+        highScore = PlayerPrefs.GetFloat("HighScore");
     }
 
     // Update is called once per frame
     void Update()
     {
+        score += scorePerSecond * Time.deltaTime;
+        scoreText.text = "Score: " + Mathf.Round(score);
     }
+    
 
     public void RestartGame()
     {
-        Debug.Log("restartin game");
-        
-        //adding a delay
-        Invoke("RestartGameInvoke",1f);
-       
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 
-    public void RestartGameInvoke()
+    public void OpenDeathMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 0f;
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetFloat("HighScore", highScore);
+        }
         
+        
+        pauseButton.SetActive(false);
+        deathMenu.SetActive(true);
+        highScoreText.text = "High Score: " + Mathf.Round(highScore);
+
+
     }
 }

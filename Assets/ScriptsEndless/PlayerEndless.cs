@@ -106,8 +106,10 @@ public class PlayerEndless : MonoBehaviour
     {
         if (other.gameObject.CompareTag(("KillBox")))
         {
-            gameManager.RestartGame();
-           
+            gameManager.OpenDeathMenu();
+            
+            
+
         }
     }
 }
