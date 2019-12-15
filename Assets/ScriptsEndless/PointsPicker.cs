@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointsPicker : MonoBehaviour
 {
-
+    public AudioSource pickupSound;
     public int bonusScore;
     public GameManager GameManager;
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class PointsPicker : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            
+            pickupSound.Play();
             GameManager.AddScore(bonusScore);
             gameObject.SetActive(false);
         }

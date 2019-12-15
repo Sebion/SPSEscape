@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Unjumpable
   - KillBox
+  - Ground
   layers:
   - Default
   - TransparentFX

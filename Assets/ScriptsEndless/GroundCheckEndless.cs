@@ -6,7 +6,7 @@ using UnityEngine;
 public class GroundCheckEndless : MonoBehaviour
 {
     private PlayerEndless player;
-
+    public AudioSource landingSound;
 
     private void Start()
     {
@@ -18,6 +18,7 @@ public class GroundCheckEndless : MonoBehaviour
         if (!hitInfo.CompareTag("Unjumpable"))
         {
             player.grounded = true;
+            landingSound.Play();
         }
     }
 

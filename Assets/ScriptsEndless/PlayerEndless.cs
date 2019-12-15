@@ -30,6 +30,9 @@ public class PlayerEndless : MonoBehaviour
     private Animator anim;
     public GameManager gameManager;
 
+    public AudioSource runningSound;
+    public AudioSource fallingSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +57,10 @@ public class PlayerEndless : MonoBehaviour
     private void FixedUpdate()
     {
         //horizontal movement
+        if (!runningSound.isPlaying)
+        {
+            runningSound.Play();
+        }
 
         if (transform.position.x > speedMilestoneCount && movementSpeed <= 16)
         {
@@ -63,15 +70,18 @@ public class PlayerEndless : MonoBehaviour
         }
 
         rb2d.velocity = new Vector2(movementSpeed, rb2d.velocity.y);
+
         //jumping
         if (grounded && CrossPlatformInputManager.GetButton("Jump"))
         {
             rb2d.velocity = (Vector2.up * jumpPower);
+            runningSound.Stop();
         }
 
         //falling
         if (rb2d.velocity.y < 0)
         {
+            runningSound.Stop();
             falling = true;
             if (falling && CrossPlatformInputManager.GetButton("Crouch"))
             {
@@ -82,6 +92,7 @@ public class PlayerEndless : MonoBehaviour
         else if (rb2d.velocity.y > 0 && !CrossPlatformInputManager.GetButton("Jump"))
         {
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            runningSound.Stop();
         }
         else falling = false;
 
@@ -106,10 +117,8 @@ public class PlayerEndless : MonoBehaviour
     {
         if (other.gameObject.CompareTag(("KillBox")))
         {
+            fallingSound.Play();
             gameManager.OpenDeathMenu();
-            
-            
-
         }
     }
 }
