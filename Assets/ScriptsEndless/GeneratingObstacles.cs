@@ -18,6 +18,8 @@ public class GeneratingObstacles : MonoBehaviour
     private int obstacleSelector;
     private float[] obstacleWidths;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {

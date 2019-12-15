@@ -29,8 +29,7 @@ public class ObjectPooler : MonoBehaviour
         {
             if (!pooledObjects[i].activeInHierarchy)
             {
-                return pooledObjects[i]
-                    ;
+                return pooledObjects[i];
             }
         }
 

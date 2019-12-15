@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject deathMenu;
     public TextMeshProUGUI highScoreText;
-    private float score;
+    public float score;
     private float highScore = 0;
     public float scorePerSecond;
 
@@ -52,5 +52,11 @@ public class GameManager : MonoBehaviour
         highScoreText.text = "High Score: " + Mathf.Round(highScore);
 
 
+    }
+
+    public void AddScore(int bonusScore)
+    {
+        score += bonusScore;
+        
     }
 }
