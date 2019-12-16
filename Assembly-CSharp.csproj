@@ -81,6 +81,7 @@
     <Compile Include="Assets\ScriptsEndless\ObjectPooler.cs" />
     <Compile Include="Assets\ScriptsEndless\PlayerEndless.cs" />
     <Compile Include="Assets\ScriptsEndless\PointsPicker.cs" />
+    <Compile Include="Assets\ScriptsEndless\VolumeSettings.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
