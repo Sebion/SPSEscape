@@ -102,14 +102,14 @@ public class PlayerEndless : MonoBehaviour
             CrossPlatformInputManager.GetButton("Crouch"))
         {
             crouching = true;
-            bc2d.offset = new Vector2(0.09703f, -0.5678f);
-            bc2d.size = new Vector2(0.9958f, 0.8754f);
+            bc2d.offset = new Vector2(0.09898f, -0.0699f);
+            bc2d.size = new Vector2(0.75518f, 1.6345f);
         }
         else
         {
             crouching = false;
-            bc2d.offset = new Vector2(-0.03028131f, -0.3534986f);
-            bc2d.size = new Vector2(0.8758283f, 1.294194f);
+            bc2d.offset = new Vector2(0.32734f, -0.3190f);
+            bc2d.size = new Vector2(1.21191f, 1.13045f);
         }
     }
 
