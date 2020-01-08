@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyingObstacles : MonoBehaviour
 {
-    public GameObject destructionPoint;
+    private GameObject destructionPoint;
 
     // Start is called before the first frame update
     void Start()
