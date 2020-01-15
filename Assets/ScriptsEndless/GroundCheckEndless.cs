@@ -8,6 +8,7 @@ public class GroundCheckEndless : MonoBehaviour
     private PlayerEndless player;
     public AudioSource landingSound;
 
+
     private void Start()
     {
         player = gameObject.GetComponentInParent<PlayerEndless>();
@@ -34,4 +35,5 @@ public class GroundCheckEndless : MonoBehaviour
     {
         player.grounded = false;
     }
+   
 }

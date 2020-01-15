@@ -27,8 +27,10 @@ public class PlayerEndless : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
+    public BoxCollider2D groundChecker;
     private Animator anim;
     public GameManager gameManager;
+
 
     public AudioSource runningSound;
     public AudioSource fallingSound;
@@ -62,6 +64,24 @@ public class PlayerEndless : MonoBehaviour
             runningSound.Play();
         }
 
+        if (falling)
+        {
+            SetBoxCollider2DtoFall();
+            groundChecker.offset = new Vector2(0.8255187f, 0.5656123f);
+            groundChecker.size = new Vector2(0.603092f, 0.4525841f);
+        }
+        else if (crouching)
+        {
+            SetBoxCollider2DtoCrouch();
+        }
+        else
+        {
+            groundChecker.offset = new Vector2(0.20877f, 0.31837f);
+            groundChecker.size = new Vector2(0.79835f, 0.66052f);
+            SetBoxCollider2DtoDefault();
+        }
+
+
         if (transform.position.x > speedMilestoneCount && movementSpeed <= 16)
         {
             speedMilestoneCount += speedIncreaseMilestone;
@@ -83,6 +103,8 @@ public class PlayerEndless : MonoBehaviour
         {
             runningSound.Stop();
             falling = true;
+
+
             if (falling && CrossPlatformInputManager.GetButton("Crouch"))
             {
                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
@@ -94,22 +116,20 @@ public class PlayerEndless : MonoBehaviour
             rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             runningSound.Stop();
         }
-        else falling = false;
-
+        else
+        {
+            falling = false;
+        }
 
         //crouching
         if (grounded && CrossPlatformInputManager.GetButtonDown("Crouch") ||
             CrossPlatformInputManager.GetButton("Crouch"))
         {
             crouching = true;
-            bc2d.offset = new Vector2(0.09898f, -0.0699f);
-            bc2d.size = new Vector2(0.75518f, 1.6345f);
         }
         else
         {
             crouching = false;
-            bc2d.offset = new Vector2(0.32734f, -0.3190f);
-            bc2d.size = new Vector2(1.21191f, 1.13045f);
         }
     }
 
@@ -117,8 +137,27 @@ public class PlayerEndless : MonoBehaviour
     {
         if (other.gameObject.CompareTag(("KillBox")))
         {
-            fallingSound.Play();
             gameManager.OpenDeathMenu();
+            fallingSound.Play();
+            runningSound.Stop();
         }
+    }
+
+    private void SetBoxCollider2DtoDefault()
+    {
+        bc2d.offset = new Vector2(0.09898f, -0.0699f);
+        bc2d.size = new Vector2(0.75518f, 1.6345f);
+    }
+
+    private void SetBoxCollider2DtoCrouch()
+    {
+        bc2d.offset = new Vector2(0.32734f, -0.3190f);
+        bc2d.size = new Vector2(1.21191f, 1.13045f);
+    }
+
+    private void SetBoxCollider2DtoFall()
+    {
+        bc2d.offset = new Vector2(0.3824404f, -0.04443032f);
+        bc2d.size = new Vector2(0.6923795f, 1.583561f);
     }
 }
