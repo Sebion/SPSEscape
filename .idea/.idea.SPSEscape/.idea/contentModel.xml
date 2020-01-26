@@ -255,6 +255,7 @@
           <e p="GeneratingObstacles.cs" t="Include" />
           <e p="GroundCheckEndless.cs" t="Include" />
           <e p="ObjectPooler.cs" t="Include" />
+          <e p="Plane.cs" t="Include" />
           <e p="PlayerEndless.cs" t="Include" />
           <e p="PointsPicker.cs" t="Include" />
           <e p="VolumeSettings.cs" t="Include" />
