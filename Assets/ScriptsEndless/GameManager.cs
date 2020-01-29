@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject deathMenu;
     public TextMeshProUGUI highScoreText;
+    public Image healthBar;
+    public Sprite[] hearts;
     public float score;
     private float highScore = 0;
     public float scorePerSecond;
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
         score += scorePerSecond * Time.deltaTime;
         scoreText.text = "Score: " + Mathf.Round(score);
     }
-    
+
 
     public void RestartGame()
     {
@@ -45,18 +47,20 @@ public class GameManager : MonoBehaviour
             highScore = score;
             PlayerPrefs.SetFloat("HighScore", highScore);
         }
-        
-        
+
+
         pauseButton.SetActive(false);
         deathMenu.SetActive(true);
         highScoreText.text = "High Score: " + Mathf.Round(highScore);
-
-
     }
 
     public void AddScore(int bonusScore)
     {
         score += bonusScore;
-        
+    }
+
+    public void changeHealth(int health)
+    {
+        healthBar.sprite = hearts[health];
     }
 }

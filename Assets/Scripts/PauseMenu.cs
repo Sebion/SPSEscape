@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused;
     public GameObject pauseMenu;
-    
+    public PlayerEndless PlayerEndless;
 
     // Update is called once per frame
     void Update()
@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
 
    public  void Pause()
     {
+        PlayerEndless.runningSound.Stop();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

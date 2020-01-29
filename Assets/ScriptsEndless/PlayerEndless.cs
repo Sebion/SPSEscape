@@ -10,6 +10,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerEndless : MonoBehaviour
 {
+    public int health =3;
+
     public float movementSpeed;
     public float movementSpeedMultiplier;
     public float speedIncreaseMilestone;
@@ -137,9 +139,14 @@ public class PlayerEndless : MonoBehaviour
     {
         if (other.gameObject.CompareTag(("KillBox")))
         {
-            gameManager.OpenDeathMenu();
-            fallingSound.Play();
-            runningSound.Stop();
+            health--;
+            gameManager.changeHealth(health);
+            if (health == 0)
+            {
+                gameManager.OpenDeathMenu();
+                fallingSound.Play();
+                runningSound.Stop();
+            }
         }
     }
 
