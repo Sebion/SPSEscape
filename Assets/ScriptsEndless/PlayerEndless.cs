@@ -10,7 +10,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerEndless : MonoBehaviour
 {
-    public int health =3;
+    public int health = 3;
 
     public float movementSpeed;
     public float movementSpeedMultiplier;
@@ -137,10 +137,15 @@ public class PlayerEndless : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        jumpPower = 18;
         if (other.gameObject.CompareTag(("KillBox")))
         {
+            jumpPower = 0;
+            other.collider.isTrigger = true;
+            gameObject.GetComponent<Animation>().Play("Hit_Player");
             health--;
             gameManager.changeHealth(health);
+            StartCoroutine(KnockBack(0.02f, 1000, transform.position));
             if (health == 0)
             {
                 gameManager.OpenDeathMenu();
@@ -148,7 +153,11 @@ public class PlayerEndless : MonoBehaviour
                 runningSound.Stop();
             }
         }
+
+        
     }
+    
+    
 
     private void SetBoxCollider2DtoDefault()
     {
@@ -166,5 +175,19 @@ public class PlayerEndless : MonoBehaviour
     {
         bc2d.offset = new Vector2(0.3824404f, -0.04443032f);
         bc2d.size = new Vector2(0.6923795f, 1.583561f);
+    }
+
+    public IEnumerator KnockBack(float knockDur, float knockBackPwr, Vector3 playerPosition)
+    {
+        float timer = 0;
+        while (knockDur > timer)
+        {
+            
+            timer += Time.deltaTime;
+            rb2d.velocity = new Vector2(0, 0); //<----------------------
+            rb2d.AddForce(new Vector3(playerPosition.x, playerPosition.y + knockBackPwr, transform.position.z));
+        }
+
+        yield return 0;
     }
 }

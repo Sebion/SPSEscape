@@ -2103,6 +2103,7 @@ GameObject:
   - component: {fileID: 550067885}
   - component: {fileID: 550067884}
   - component: {fileID: 550067883}
+  - component: {fileID: 550067882}
   m_Layer: 8
   m_Name: PlayerEndless
   m_TagString: Player
@@ -2110,6 +2111,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!111 &550067882
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550067881}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 172b13a262985dd44a642b0950763d10, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 172b13a262985dd44a642b0950763d10, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &550067883
 MonoBehaviour:
   m_ObjectHideFlags: 0
