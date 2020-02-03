@@ -27,6 +27,7 @@ public class PlayerEndless : MonoBehaviour
     public bool crouching;
     public bool falling;
 
+
     private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     public BoxCollider2D groundChecker;
@@ -142,7 +143,7 @@ public class PlayerEndless : MonoBehaviour
         {
             jumpPower = 0;
             other.collider.isTrigger = true;
-            gameObject.GetComponent<Animation>().Play("Hit_Player");
+            anim.SetTrigger("Hit");
             health--;
             gameManager.changeHealth(health);
             StartCoroutine(KnockBack(0.02f, 1000, transform.position));
@@ -153,11 +154,8 @@ public class PlayerEndless : MonoBehaviour
                 runningSound.Stop();
             }
         }
-
-        
     }
-    
-    
+
 
     private void SetBoxCollider2DtoDefault()
     {
@@ -182,7 +180,6 @@ public class PlayerEndless : MonoBehaviour
         float timer = 0;
         while (knockDur > timer)
         {
-            
             timer += Time.deltaTime;
             rb2d.velocity = new Vector2(0, 0); //<----------------------
             rb2d.AddForce(new Vector3(playerPosition.x, playerPosition.y + knockBackPwr, transform.position.z));
