@@ -18,7 +18,7 @@ public class Plane : MonoBehaviour
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         movementSpeed = Random.Range(-2f, -5f);
-        upDownInterval = Random.Range(1f, 4f);
+        upDownInterval = Random.Range(1f, 3f);
         speedOfInterval = Random.Range(1f,4f);
     }
 
