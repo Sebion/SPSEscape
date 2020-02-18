@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1024585427056130943}
   - component: {fileID: 4814483081878671584}
-  - component: {fileID: 2166202677449360998}
   - component: {fileID: 7897413297220334670}
   - component: {fileID: 114433248969708104}
+  - component: {fileID: 8931839012247470322}
+  - component: {fileID: 50023382987494782}
   m_Layer: 0
   m_Name: Cherry
   m_TagString: Unjumpable
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -100937157
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8582e97fa62334fbd8bd10c1052e27b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: beded1ea3d321d3489a289e2784d611b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,22 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2166202677449360998
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6763632869665225169}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.07243943, y: 0.0036216974}
-  serializedVersion: 2
-  m_Radius: 0.50050473
 --- !u!114 &7897413297220334670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,3 +110,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8619068ad56852a429781729e7e2831b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &8931839012247470322
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763632869665225169}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.40934753, y: -0.49290293}
+  - {x: -0.5611367, y: 0.00603652}
+  - {x: -0.39112616, y: 0.36697102}
+  - {x: 0.526464, y: -0.09420872}
+  - {x: 0.41048098, y: -0.49290293}
+--- !u!50 &50023382987494782
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6763632869665225169}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -10,11 +10,16 @@ public class CoinGenerator : MonoBehaviour
     public Transform generationPoint;
     public ObjectPooler[] objectPools;
     private int obstacleSelector;
+    
 
 
     public float distanceBetweenCoins;
     private float coinY;
 
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {
@@ -36,6 +41,8 @@ public class CoinGenerator : MonoBehaviour
             }
         }
     }
+    
+   
 
     private void SpawnCoin(int indexOfCoin)
     {
@@ -46,6 +53,7 @@ public class CoinGenerator : MonoBehaviour
         newObstacle.transform.position = transform.position;
         newObstacle.transform.rotation = transform.rotation;
         newObstacle.SetActive(true);
+        
 
         transform.position =
             new Vector3(transform.position.x + distanceBetweenCoins, coinY, transform.position.z);

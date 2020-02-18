@@ -1583,6 +1583,22 @@ PrefabInstance:
       propertyPath: destructionPoint
       value: 
       objectReference: {fileID: 76104523}
+    - target: {fileID: 3445695691286887750, guid: 41d4a52d835d82d40acc85916cac8b95,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 43877dea72e697e49bc9c4cb489b6b00,
+        type: 3}
+    - target: {fileID: 4562201673315222855, guid: 41d4a52d835d82d40acc85916cac8b95,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562201673315222855, guid: 41d4a52d835d82d40acc85916cac8b95,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41d4a52d835d82d40acc85916cac8b95, type: 3}
 --- !u!1 &407659645
@@ -3726,6 +3742,17 @@ PrefabInstance:
       propertyPath: pickupSound
       value: 
       objectReference: {fileID: 2124387837}
+    - target: {fileID: 4814483081878671584, guid: a62c4b83f900f1744b53c61e05a63cdb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: beded1ea3d321d3489a289e2784d611b,
+        type: 3}
+    - target: {fileID: 8931839012247470322, guid: a62c4b83f900f1744b53c61e05a63cdb,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a62c4b83f900f1744b53c61e05a63cdb, type: 3}
 --- !u!1 &1132849155
@@ -3925,7 +3952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189460463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.12, y: -0.78, z: 0}
+  m_LocalPosition: {x: -38.06, y: -0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 57846737}
