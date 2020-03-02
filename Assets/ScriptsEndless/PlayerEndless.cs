@@ -183,8 +183,9 @@ public class PlayerEndless : MonoBehaviour
             timer += Time.deltaTime;
             rb2d.velocity = new Vector2(0, 0); //<----------------------
             rb2d.AddForce(new Vector3(playerPosition.x, playerPosition.y + knockBackPwr, transform.position.z));
+          
         }
-
-        yield return 0;
+        yield return null;
+        
     }
 }

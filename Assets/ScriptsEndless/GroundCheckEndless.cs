@@ -16,7 +16,7 @@ public class GroundCheckEndless : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (!hitInfo.CompareTag("Unjumpable")&& player.falling.Equals(true))
+        if (!hitInfo.CompareTag("Unjumpable")&& player.falling.Equals(true)&& !hitInfo.CompareTag("KillBox"))
         {
             player.grounded = true;
             landingSound.Play();
@@ -25,7 +25,7 @@ public class GroundCheckEndless : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D hitInfo)
     {
-        if (!hitInfo.CompareTag("Unjumpable"))
+        if (!hitInfo.CompareTag("Unjumpable")&&!hitInfo.CompareTag("KillBox"))
         {
             player.grounded = true;
         }
