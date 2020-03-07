@@ -24,6 +24,7 @@ public class PointsPicker : MonoBehaviour
     private void FixedUpdate()
     {
         rb2d.velocity=new Vector2(rb2d.velocity.x,Mathf.Sin(Time.time*5)*2);
+        
     }
    
 

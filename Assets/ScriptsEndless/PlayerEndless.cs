@@ -173,6 +173,7 @@ public class PlayerEndless : MonoBehaviour
     {
         bc2d.offset = new Vector2(0.3824404f, -0.04443032f);
         bc2d.size = new Vector2(0.6923795f, 1.583561f);
+       
     }
 
     public IEnumerator KnockBack(float knockDur, float knockBackPwr, Vector3 playerPosition)
