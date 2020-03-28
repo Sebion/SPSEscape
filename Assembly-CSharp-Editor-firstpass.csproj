@@ -310,8 +310,53 @@
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
       <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Editor">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
       <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Physics Materials/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.135.0">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.135.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.135.0">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.135.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.135.0">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.135.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/WanzyeeStudio/ThirdParty/SaladLab/Json.Net.Unity3D/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -699,6 +744,10 @@
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
       <Project>{EA65BA14-523C-2350-202E-171028C6D488}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="WanzyeeStudio.Runtime.csproj">
+      <Project>{423A59CF-2A14-966C-0114-E5CB210E23B6}</Project>
+      <Name>WanzyeeStudio.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

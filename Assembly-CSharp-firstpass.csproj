@@ -68,7 +68,25 @@
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
     <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+    <None Include="Assets\Plugins\Android\Firebase\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-unity-6.12.0\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-unity-6.12.0\R.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-common-19.3.0\R.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-analytics-unity-6.12.0\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-analytics-unity-6.12.0\proguard.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-auth-unity-6.12.0\proguard.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-common-19.3.0\proguard.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-common-19.3.0\third_party_licenses.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-database-unity-6.12.0\R.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-app-unity-6.12.0\proguard.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-app-unity-6.12.0\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-analytics-unity-6.12.0\R.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-database-unity-6.12.0\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-common-19.3.0\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-database-unity-6.12.0\proguard.txt" />
+    <None Include="Assets\Plugins\Android\com.google.firebase.firebase-app-unity-6.12.0\R.txt" />
+    <None Include="Assets\Plugins\Android\Firebase\res\values\google-services.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -284,6 +302,36 @@
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
       <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Assets/WanzyeeStudio/ThirdParty/SaladLab/Json.Net.Unity3D/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/Sebastián/UnityProjects/SPSEscape/SPSEscape/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
@@ -652,6 +700,10 @@
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
       <Project>{EA65BA14-523C-2350-202E-171028C6D488}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="WanzyeeStudio.Runtime.csproj">
+      <Project>{423A59CF-2A14-966C-0114-E5CB210E23B6}</Project>
+      <Name>WanzyeeStudio.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

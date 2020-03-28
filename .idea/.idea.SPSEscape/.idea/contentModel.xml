@@ -214,6 +214,37 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="Firebase" t="Include">
+          <e p="Editor" t="Include">
+            <e p="AnalyticsDependencies.xml" t="Include" />
+            <e p="AppDependencies.xml" t="Include" />
+            <e p="AuthDependencies.xml" t="Include" />
+            <e p="DatabaseDependencies.xml" t="Include" />
+            <e p="FirebaseAnalytics_version-6.12.0_manifest.txt" t="Include" />
+            <e p="FirebaseAuth_version-6.12.0_manifest.txt" t="Include" />
+            <e p="FirebaseDatabase_version-6.12.0_manifest.txt" t="Include" />
+          </e>
+          <e p="m2repository" t="Include">
+            <e p="com" t="Include">
+              <e p="google" t="Include">
+                <e p="Firebase" t="Include">
+                  <e p="firebase-analytics-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-app-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-auth-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-database-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Joystick Pack" t="Include">
           <e p="Examples" t="Include">
             <e p="JoystickPlayerExample.cs" t="Include" />
@@ -237,6 +268,49 @@
             </e>
           </e>
         </e>
+        <e p="PlayServicesResolver" t="Include">
+          <e p="Editor" t="Include">
+            <e p="play-services-resolver_v1.2.135.0.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Android" t="Include">
+            <e p="com.google.firebase.firebase-analytics-unity-6.12.0" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+              <e p="proguard.txt" t="Include" />
+              <e p="R.txt" t="Include" />
+            </e>
+            <e p="com.google.firebase.firebase-app-unity-6.12.0" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+              <e p="proguard.txt" t="Include" />
+              <e p="R.txt" t="Include" />
+            </e>
+            <e p="com.google.firebase.firebase-auth-unity-6.12.0" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+              <e p="proguard.txt" t="Include" />
+              <e p="R.txt" t="Include" />
+            </e>
+            <e p="com.google.firebase.firebase-common-19.3.0" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+              <e p="proguard.txt" t="Include" />
+              <e p="R.txt" t="Include" />
+              <e p="third_party_licenses.txt" t="Include" />
+            </e>
+            <e p="com.google.firebase.firebase-database-unity-6.12.0" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+              <e p="proguard.txt" t="Include" />
+              <e p="R.txt" t="Include" />
+            </e>
+            <e p="Firebase" t="Include">
+              <e p="AndroidManifest.xml" t="Include" />
+              <e p="res" t="Include">
+                <e p="values" t="Include">
+                  <e p="google-services.xml" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Bullet.cs" t="Include" />
           <e p="CameraFollow.cs" t="Include" />
@@ -251,6 +325,7 @@
           <e p="CameraEndless.cs" t="Include" />
           <e p="CoinGenerator.cs" t="Include" />
           <e p="DestroyingObstacles.cs" t="Include" />
+          <e p="FirebaseSetup.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GeneratingObstacles.cs" t="Include" />
           <e p="GroundCheckEndless.cs" t="Include" />
@@ -258,6 +333,8 @@
           <e p="Plane.cs" t="Include" />
           <e p="PlayerEndless.cs" t="Include" />
           <e p="PointsPicker.cs" t="Include" />
+          <e p="Registration.cs" t="Include" />
+          <e p="User.cs" t="Include" />
           <e p="VolumeSettings.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
@@ -355,6 +432,37 @@
             <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
+        <e p="WanzyeeStudio" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Runtime" t="Include">
+              <e p="Concrete" t="Include">
+                <e p="Json" t="Include">
+                  <e p="BoundsConverter.cs" t="Include" />
+                  <e p="ColorConverter.cs" t="Include" />
+                  <e p="DictionaryConverter.cs" t="Include" />
+                  <e p="JsonNetUtility.cs" t="Include" />
+                  <e p="Matrix4x4Converter.cs" t="Include" />
+                  <e p="PartialConverter.cs" t="Include" />
+                  <e p="QuaternionConverter.cs" t="Include" />
+                  <e p="RectConverter.cs" t="Include" />
+                  <e p="RectOffsetConverter.cs" t="Include" />
+                  <e p="Vector2Converter.cs" t="Include" />
+                  <e p="Vector3Converter.cs" t="Include" />
+                  <e p="Vector4Converter.cs" t="Include" />
+                </e>
+              </e>
+              <e p="WanzyeeStudio.Runtime.asmdef" t="Include" />
+            </e>
+          </e>
+          <e p="ThirdParty" t="Include">
+            <e p="SaladLab" t="Include">
+              <e p="Json.Net.Unity3D" t="Include">
+                <e p="LICENSE.txt" t="Include" />
+                <e p="link.xml" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
       </e>
       <e p="AstarPathfindingProject.csproj" t="IncludeRecursive" />
       <e p="AstarPathfindingProjectEditor.csproj" t="IncludeRecursive" />
@@ -363,6 +471,7 @@
       <e p="PackageToolsEditor.csproj" t="IncludeRecursive" />
       <e p="SPSEscape.sln" t="IncludeFlat" />
       <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="WanzyeeStudio.Runtime.csproj" t="IncludeRecursive" />
     </e>
   </component>
 </project>

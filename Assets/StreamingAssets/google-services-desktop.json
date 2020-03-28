@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "391065412110",
+    "firebase_url": "https://spsescape-c4e57.firebaseio.com",
+    "project_id": "spsescape-c4e57",
+    "storage_bucket": "spsescape-c4e57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391065412110:android:27d960f49843694ee3925f",
+        "android_client_info": {
+          "package_name": "com.spse.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391065412110-8puh0m93l82ft948236eqcujg0n7nogg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDExt8V83H7OHqyfquP8YvpUyszljmGCJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391065412110-8puh0m93l82ft948236eqcujg0n7nogg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
