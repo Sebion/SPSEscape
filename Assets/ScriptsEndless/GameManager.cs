@@ -17,11 +17,13 @@ public class GameManager : MonoBehaviour
     public float score;
     private float highScore = 0;
     public float scorePerSecond;
+    private FirebaseSetup _firebaseSetup;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        _firebaseSetup= new FirebaseSetup();
         highScore = PlayerPrefs.GetFloat("HighScore");
     }
 
@@ -46,12 +48,14 @@ public class GameManager : MonoBehaviour
         {
             highScore = score;
             PlayerPrefs.SetFloat("HighScore", highScore);
+            _firebaseSetup.WriteUserToDatabase(PlayerPrefs.GetString("Username"),(int)highScore);
         }
 
 
         pauseButton.SetActive(false);
         deathMenu.SetActive(true);
         highScoreText.text = "High Score: " + Mathf.Round(highScore);
+        
     }
 
     public void AddScore(int bonusScore)

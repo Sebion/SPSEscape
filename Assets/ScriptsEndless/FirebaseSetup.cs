@@ -84,12 +84,7 @@ public class FirebaseSetup
         
     }
 
-    public bool IsUsernameTaken(string username)
-    {
-        GetAllPlayersFromDatabase(username);
-        Debug.Log("v druhej metode"+isTaken);
-        return isTaken;
-    }
+    
     
     
 

@@ -2,7 +2,7 @@
 using UnityEngine.Experimental.UIElements;
 
 
-[Serializable]
+
 public class User
 {
     private String username;

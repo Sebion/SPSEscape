@@ -24,15 +24,20 @@ public class Registration : MonoBehaviour
 
     void Start()
     {
-       
-        players = new List<string>();
-        _firebaseSetup = new FirebaseSetup();
-        StartCoroutine(GetAllPlayersFromDatabase());
+        if (!PlayerPrefs.GetString("Username").Equals(""))
+        {
+            GoToMainMenuScene();
+        }
+        else
+        {
+            players = new List<string>();
+            _firebaseSetup = new FirebaseSetup();
+            StartCoroutine(GetAllPlayersFromDatabase());
+        }
     }
 
     public void OnRegister()
     {
-
         if (usernameInput.text.Equals(""))
         {
             warningText.SetText("You must have a name!");
@@ -45,13 +50,12 @@ public class Registration : MonoBehaviour
         {
             _firebaseSetup.WriteUserToDatabase(usernameInput.text, 0);
             PlayerPrefs.SetString("Username", usernameInput.text);
-            GoToLoginScene();
+            GoToMainMenuScene();
         }
     }
 
     private bool isTaken()
     {
-        
         foreach (var username in players)
         {
             if (username == usernameInput.text)
@@ -64,13 +68,13 @@ public class Registration : MonoBehaviour
         return false;
     }
 
-    public void GoToLoginScene()
+    public void GoToMainMenuScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Update is called once per frame
-   private IEnumerator GetAllPlayersFromDatabase()
+    private IEnumerator GetAllPlayersFromDatabase()
     {
         yield return new WaitForSeconds(0.5f);
         _firebaseSetup.databaseReference.Child("Players")
@@ -84,17 +88,14 @@ public class Registration : MonoBehaviour
                     DataSnapshot snapshot = task.Result;
                     string json = snapshot.GetRawJsonValue();
                     JObject jObject = JObject.Parse(json);
-                   
+
 
                     foreach (var pair in jObject)
                     {
                         players.Add(pair.Key);
                         Debug.Log(pair.Key);
-                        
-
                     }
                 }
             });
-
     }
 }
