@@ -24,7 +24,7 @@ public class Registration : MonoBehaviour
 
     void Start()
     {
-        if (!PlayerPrefs.GetString("Username").Equals(""))
+        if (PlayerPrefs.GetString("Username")!=(""))
         {
             GoToMainMenuScene();
         }

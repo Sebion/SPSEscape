@@ -11,11 +11,13 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public Slider MusicSlider;
     public Slider FxSlider;
-
+    
 
     private void Start()
     {
         SetVolume();
+        
+
     }
 
    
