@@ -6,6 +6,7 @@ using Firebase.Database;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace DefaultNamespace
 {
@@ -14,7 +15,9 @@ namespace DefaultNamespace
         public TMP_Text[] scoreboard;
         private FirebaseSetup _firebaseSetup;
         private List<User> players;
-        
+        public GameObject scoreBoardObject;
+        public Image loader;
+
 
         private void Start()
         {
@@ -23,9 +26,25 @@ namespace DefaultNamespace
             StartCoroutine(GetAllPlayersFromDatabase());
         }
 
+        public void spin()
+        {
+            loader.transform.Rotate(0, 0, 60 * Time.deltaTime * 4);
+        }
+
+        public void Update()
+        {
+            spin();
+        }
+
+//        private IEnumerator Loading()
+//        {
+//            yield return new WaitWhile();
+//            
+//        }
 
         private IEnumerator GetAllPlayersFromDatabase()
         {
+            
             yield return new WaitForSeconds(0.5f);
             _firebaseSetup.databaseReference.Child("Players")
                 .GetValueAsync().ContinueWith(task =>
