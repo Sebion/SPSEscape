@@ -18,18 +18,21 @@ public class Registration : MonoBehaviour
 
     public TMP_Text warningText;
     public TMP_InputField usernameInput;
+    public GameObject button;
     private FirebaseSetup _firebaseSetup;
     private List<string> players;
 
 
     void Start()
     {
-        if (PlayerPrefs.GetString("Username")!=(""))
+        if (PlayerPrefs.GetString("Username") != (""))
         {
             GoToMainMenuScene();
         }
         else
         {
+            button.SetActive(true);
+            usernameInput.gameObject.SetActive(true);
             players = new List<string>();
             _firebaseSetup = new FirebaseSetup();
             StartCoroutine(GetAllPlayersFromDatabase());
@@ -48,8 +51,8 @@ public class Registration : MonoBehaviour
         }
         else
         {
-            _firebaseSetup.WriteUserToDatabase(usernameInput.text, 0);
-            PlayerPrefs.SetString("Username", usernameInput.text);
+            _firebaseSetup.WriteUserToDatabase(usernameInput.text.ToUpper(), 0);
+            PlayerPrefs.SetString("Username", usernameInput.text.ToUpper());
             GoToMainMenuScene();
         }
     }
@@ -58,7 +61,8 @@ public class Registration : MonoBehaviour
     {
         foreach (var username in players)
         {
-            if (username == usernameInput.text)
+            Debug.Log(username);
+            if (username == usernameInput.text.ToUpper())
             {
                 Debug.Log("uz take je meno");
                 return true;

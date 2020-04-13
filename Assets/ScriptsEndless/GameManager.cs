@@ -47,14 +47,14 @@ public class GameManager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
-            PlayerPrefs.SetFloat("HighScore", highScore);
+            PlayerPrefs.SetFloat("HighScore", (int)highScore);
             _firebaseSetup.WriteUserToDatabase(PlayerPrefs.GetString("Username"),(int)highScore);
         }
 
 
         pauseButton.SetActive(false);
         deathMenu.SetActive(true);
-        highScoreText.text = "High Score: " + Mathf.Round(highScore);
+        highScoreText.text = "High Score: " + (int)highScore;
         
     }
 

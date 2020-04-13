@@ -96,6 +96,15 @@ namespace DefaultNamespace
                 {
                     Debug.Log("zoradujem");
                     Debug.Log(player.ToString());
+                    if (PlayerPrefs.GetString("Username").Equals(player.getUsername()))
+                    {
+                        scoreboard[i-1].color=new Color32(254, 205, 0, 255);
+                    }
+                    else
+                    {
+                        scoreboard[i-1].color=new Color32(255, 255, 255, 255);
+                    }
+
                     scoreboard[i - 1].text = i + ". " + player.getUsername() + " - " + player.getScore();
                     i++;
                 }
