@@ -16,13 +16,18 @@ namespace DefaultNamespace
         private FirebaseSetup _firebaseSetup;
         private List<User> players;
         public GameObject scoreBoardObject;
-        public Image loader;
+        public GameObject loader;
+        private bool isReady;
 
 
-        private void Start()
+        public void StartScoreboard()
         {
             players = new List<User>();
             _firebaseSetup = new FirebaseSetup();
+            loader.SetActive(true);
+            isReady = false;
+            Debug.Log("start v scoreboarde");
+            scoreBoardObject.SetActive(false);
             StartCoroutine(GetAllPlayersFromDatabase());
         }
 
@@ -44,7 +49,6 @@ namespace DefaultNamespace
 
         private IEnumerator GetAllPlayersFromDatabase()
         {
-            
             yield return new WaitForSeconds(0.5f);
             _firebaseSetup.databaseReference.Child("Players")
                 .GetValueAsync().ContinueWith(task =>
@@ -67,22 +71,39 @@ namespace DefaultNamespace
                                 players.Add(new User(pair.Key, x));
                             }
                         }
+
+                        isReady = true;
+                        Debug.Log("nacitane");
                     }
                 });
-            yield return new WaitForSeconds(2f);
+            Debug.Log("spustam zoradovanie");
+            StartCoroutine(GetTop10());
+        }
+
+        public bool isReadyFunc()
+        {
+            return isReady;
+        }
+
+        private IEnumerator GetTop10()
+        {
+            yield return new WaitUntil(isReadyFunc);
             var orderedByScore = players.OrderByDescending(player => player.getScore()).ToList();
             int i = 1;
             foreach (var player in orderedByScore)
             {
-                if (i<11)
+                if (i < 11)
                 {
-                    
+                    Debug.Log("zoradujem");
                     Debug.Log(player.ToString());
-                    scoreboard[i-1].text = i+". "+ player.getUsername() +" - "+player.getScore();
+                    scoreboard[i - 1].text = i + ". " + player.getUsername() + " - " + player.getScore();
                     i++;
-                }else break;
-                
+                }
+                else break;
             }
+
+            loader.SetActive(false);
+            scoreBoardObject.SetActive(true);
         }
     }
 }
