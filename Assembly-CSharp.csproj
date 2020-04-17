@@ -80,6 +80,7 @@
     <Compile Include="Assets\ScriptsEndless\GameManager.cs" />
     <Compile Include="Assets\ScriptsEndless\GeneratingObstacles.cs" />
     <Compile Include="Assets\ScriptsEndless\GroundCheckEndless.cs" />
+    <Compile Include="Assets\ScriptsEndless\LockersEnemy.cs" />
     <Compile Include="Assets\ScriptsEndless\ObjectPooler.cs" />
     <Compile Include="Assets\ScriptsEndless\Plane.cs" />
     <Compile Include="Assets\ScriptsEndless\PlayerEndless.cs" />
