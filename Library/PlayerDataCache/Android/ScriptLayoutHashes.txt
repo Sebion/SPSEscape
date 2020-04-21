@@ -190,6 +190,7 @@ e7af7273c8177a5779551d022b323d84 AstarPathfindingProject.dll:Pathfinding.Raycast
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.TMP_DigitValidator
 3dee950b75ec949838129d4a95b1687c Assembly-CSharp.dll:.CameraFollow
 35a9693c388776aaf487636491a20f11 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
+1ae8d738e38d88b982687e4a0b4d14d5 Assembly-CSharp.dll:.LockersEnemy
 e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:TMPro.Examples.TextConsoleSimulator
 c181fc48305e752f3e25e609d7495634 AstarPathfindingProject.dll:Pathfinding.AstarDebugger
