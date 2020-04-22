@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,13 +19,16 @@ public class GameManager : MonoBehaviour
     private float highScore = 0;
     public float scorePerSecond;
     private FirebaseSetup _firebaseSetup;
+    public int health;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _firebaseSetup= new FirebaseSetup();
+        _firebaseSetup = new FirebaseSetup();
         highScore = PlayerPrefs.GetFloat("HighScore");
+        health = 3;
+        Debug.Log("gm"+health);
     }
 
     // Update is called once per frame
@@ -47,15 +51,14 @@ public class GameManager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
-            PlayerPrefs.SetFloat("HighScore", (int)highScore);
-            _firebaseSetup.WriteUserToDatabase(PlayerPrefs.GetString("Username"),(int)highScore);
+            PlayerPrefs.SetFloat("HighScore", (int) highScore);
+            _firebaseSetup.WriteUserToDatabase(PlayerPrefs.GetString("Username"), (int) highScore);
         }
 
 
         pauseButton.SetActive(false);
         deathMenu.SetActive(true);
-        highScoreText.text = "High Score: " + (int)highScore;
-        
+        highScoreText.text = "High Score: " + (int) highScore;
     }
 
     public void AddScore(int bonusScore)
@@ -63,8 +66,25 @@ public class GameManager : MonoBehaviour
         score += bonusScore;
     }
 
-    public void changeHealth(int health)
+    public void takeHealth()
     {
-        healthBar.sprite = hearts[health];
+        
+        if (health > 0)
+        {
+            health--;
+            healthBar.sprite = hearts[health];
+        }
+        Debug.Log(health);
+        
+    }
+
+    public void giveHealth()
+    {
+        if (health < 3)
+        {
+            health++;
+            healthBar.sprite = hearts[health];
+        }
+        Debug.Log(health);
     }
 }

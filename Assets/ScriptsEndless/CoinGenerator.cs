@@ -26,16 +26,16 @@ public class CoinGenerator : MonoBehaviour
         if (transform.position.x < generationPoint.transform.position.x)
         {
             coinY = Random.Range(0, 3);
-            obstacleSelector = Random.Range(0, 5);
+            obstacleSelector = Random.Range(0, 7);
             distanceBetweenCoins = Random.Range(10, 15);
             
 
-            if (obstacleSelector >=3)
+            if (obstacleSelector <=5)
             {
                 SpawnCoin(0);
             }
 
-            if (obstacleSelector == 4)
+            if (obstacleSelector >= 6)
             {
                 SpawnCoin(1);
             }

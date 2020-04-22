@@ -10,7 +10,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerEndless : MonoBehaviour
 {
-    public int health = 3;
+    
 
     public float movementSpeed;
     public float movementSpeedMultiplier;
@@ -46,6 +46,7 @@ public class PlayerEndless : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         bc2d = gameObject.GetComponent<BoxCollider2D>();
         movementSpeed = gameObject.GetComponent<PlayerEndless>().movementSpeed;
+        Debug.Log(gameManager.health);
     }
 
     // Update is called once per frame
@@ -144,10 +145,9 @@ public class PlayerEndless : MonoBehaviour
             jumpPower = 0;
             other.collider.isTrigger = true;
             anim.SetTrigger("Hit");
-            health--;
-            gameManager.changeHealth(health);
+            gameManager.takeHealth();
             StartCoroutine(KnockBack(0.02f, 1000, transform.position));
-            if (health == 0)
+            if (gameManager.health == 0)
             {
                 gameManager.OpenDeathMenu();
                 fallingSound.Play();

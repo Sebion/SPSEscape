@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupSound: {fileID: 0}
   bonusScore: 20
+  addsHealth: 1
   GameManager: {fileID: 0}
 --- !u!114 &114433248969708104
 MonoBehaviour:

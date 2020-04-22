@@ -7,6 +7,7 @@ public class PointsPicker : MonoBehaviour
 {
     public AudioSource pickupSound;
     public int bonusScore;
+    public bool addsHealth;
     public GameManager GameManager;
     private Rigidbody2D rb2d;
     
@@ -34,6 +35,11 @@ public class PointsPicker : MonoBehaviour
         {
             pickupSound.Play();
             GameManager.AddScore(bonusScore);
+            if (addsHealth)
+            {
+                GameManager.giveHealth();
+            }
+            
             gameObject.SetActive(false);
         }
     }
