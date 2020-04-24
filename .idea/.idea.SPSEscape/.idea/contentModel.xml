@@ -332,6 +332,7 @@
           <e p="GroundCheckEndless.cs" t="Include" />
           <e p="LockersEnemy.cs" t="Include" />
           <e p="ObjectPooler.cs" t="Include" />
+          <e p="PillPicker.cs" t="Include" />
           <e p="Plane.cs" t="Include" />
           <e p="PlayerEndless.cs" t="Include" />
           <e p="PointsPicker.cs" t="Include" />

@@ -82,6 +82,7 @@
     <Compile Include="Assets\ScriptsEndless\GroundCheckEndless.cs" />
     <Compile Include="Assets\ScriptsEndless\LockersEnemy.cs" />
     <Compile Include="Assets\ScriptsEndless\ObjectPooler.cs" />
+    <Compile Include="Assets\ScriptsEndless\PillPicker.cs" />
     <Compile Include="Assets\ScriptsEndless\Plane.cs" />
     <Compile Include="Assets\ScriptsEndless\PlayerEndless.cs" />
     <Compile Include="Assets\ScriptsEndless\PointsPicker.cs" />

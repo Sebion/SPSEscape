@@ -35,8 +35,10 @@ public class PointsPicker : MonoBehaviour
         {
             pickupSound.Play();
             GameManager.AddScore(bonusScore);
+            
             if (addsHealth)
             {
+                
                 GameManager.giveHealth();
             }
             

@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
             health--;
             healthBar.sprite = hearts[health];
         }
-        Debug.Log(health);
+       
         
     }
 
@@ -85,6 +85,6 @@ public class GameManager : MonoBehaviour
             health++;
             healthBar.sprite = hearts[health];
         }
-        Debug.Log(health);
+        
     }
 }
