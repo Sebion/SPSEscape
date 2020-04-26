@@ -30,19 +30,19 @@ public class CoinGenerator : MonoBehaviour
             distanceBetweenCoins = Random.Range(10, 15);
             
 
-            if (obstacleSelector <=4)
+            if (obstacleSelector <=5)
             {
                 SpawnCoin(0);
             }
 
-            else if (obstacleSelector >= 5 && obstacleSelector <=6)
+            else if (obstacleSelector ==6)
             {
-                SpawnCoin(1);
+                SpawnCoin(2);
             }
 
             else if (obstacleSelector >= 7 )
             {
-                SpawnCoin(2);
+                SpawnCoin(1);
             }
         }
     }

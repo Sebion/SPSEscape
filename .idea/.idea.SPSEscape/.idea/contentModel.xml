@@ -214,6 +214,11 @@
             <e p="UnityReferenceHelper.cs" t="Include" />
           </e>
         </e>
+        <e p="CVDFilter" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CVDFilter.cs" t="Include" />
+          </e>
+        </e>
         <e p="Firebase" t="Include">
           <e p="Editor" t="Include">
             <e p="AnalyticsDependencies.xml" t="Include" />
